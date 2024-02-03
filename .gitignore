@@ -161,3 +161,8 @@ cython_debug/
 data.accdb
 data/csv/*.csv
 play.ipynb
+*~lock*
+temp.*
+lookup_dict.json
+tmp.json
+secret.env

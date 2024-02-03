@@ -38,6 +38,9 @@ for x in files:
     for i, row in df.iterrows():
         lookup_dict[name][str(row["id"])] = row.to_dict()
 
+with open("helper_tables.json", "w", encoding="utf-8") as f:
+    json.dump(lookup_dict, f, ensure_ascii=True, indent=2)
+
 df = pd.read_csv(files[0]).fillna(0).astype(str)
 df.columns = [x.replace(" ", "_") for x in df.columns.str.lower()]
 df = df.rename(columns={"course_general_category": "course_category"})

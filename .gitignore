@@ -166,3 +166,4 @@ temp.*
 lookup_dict.json
 tmp.json
 secret.env
+helper_tables.json

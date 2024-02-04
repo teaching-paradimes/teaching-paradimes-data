@@ -2,4 +2,4 @@ pandas>2.0<3
 tqdm>=4.6<5
 ruff>=0.2.0<1
 pyarrow
-acdh-baserow-pyutils
+more-itertools>=10.2.0<11

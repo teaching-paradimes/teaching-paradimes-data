@@ -32,7 +32,9 @@ for x in files:
         continue
     else:
         name_parts = x.split("_")[2:]
-        name = "_".join(name_parts).lower().replace(".csv", "").replace(" ", "_")
+        name = (
+            "_".join(name_parts).lower().replace(".csv", "").replace(" ", "_")
+        )
     lookup_dict[name] = {}
     df.columns = ["id", "value"]
     for i, row in df.iterrows():

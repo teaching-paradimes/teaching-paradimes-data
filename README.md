@@ -15,7 +15,8 @@ docker run \
   baserow/baserow:1.22.2
 ```
 
-## prepare date
+## prepare and import data to baserow
 
 * run `prepare_data.py`
-* run `import2baserow.py`
+* run `migrate.py`
+* run `import.py`

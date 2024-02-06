@@ -1,10 +1,13 @@
 import json
 import os
+from collections import defaultdict
 
 import more_itertools as mit
 import requests
 from acdh_baserow_pyutils import BaseRowClient
 from tqdm import tqdm
+
+from conf import col_mapping
 
 BASEROW_TOKEN = os.environ.get("BASEROW_TOKEN")
 BASEROW_USER = os.environ.get("BASEROW_USER")
@@ -19,7 +22,11 @@ client = BaseRowClient(
     br_base_url=BASEROW_URL,
     br_db_id=BASEROW_DB,
 )
-
+d = defaultdict(list)
+for key, value in col_mapping.items():
+    if key.endswith("1") or key.endswith("2"):
+        d[value].append(key)
+print(dict(d))
 courses_table_id = client.br_table_dict["courses"]["id"]
 
 with open("tmp.json", "r") as f:
@@ -53,6 +60,15 @@ for batch in tqdm(batched_data):
                     pass
             else:
                 item[field] = x[field]
+        for key, value in d.items():
+            item[key] = []
+            for y in value:
+                try:
+                    item[key].append(int(x[y]["id"]))
+                except (KeyError, TypeError):
+                    continue
+            if not item[key]:
+                del item[key]
         objects.append(item)
     r = requests.post(
         update_url,

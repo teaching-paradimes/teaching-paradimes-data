@@ -160,7 +160,7 @@ cython_debug/
 #.idea/
 data.accdb
 data/csv/*.csv
-play.ipynb
+play*.ipynb
 *~lock*
 temp.*
 lookup_dict.json

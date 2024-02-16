@@ -1,5 +1,5 @@
 # teaching-paradimes-data
-teaching paradimes data processing repo
+teaching paradimes data processing repo, converts MS-Access database into a baserow project  
 
 ## set up local baserow
 
@@ -20,3 +20,6 @@ docker run \
 * run `prepare_data.py`
 * run `migrate.py`
 * run `import.py`
+
+
+ideally needed only run to be once (which happend now 2024-02-16, see [baserow-table](https://baserow.acdh-dev.oeaw.ac.at/database/520/table/3037/10954))

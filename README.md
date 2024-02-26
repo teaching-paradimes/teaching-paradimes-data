@@ -23,3 +23,5 @@ docker run \
 
 
 ideally needed only run to be once (which happend now 2024-02-16, see [baserow-table](https://baserow.acdh-dev.oeaw.ac.at/database/520/table/3037/10954))
+
+rerun due to closing [#1](https://github.com/teaching-paradimes/teaching-paradimes-data/issues/1)

@@ -46,6 +46,9 @@ sample_fields = [
     "discipline",
     "subdiscipline",
     "course_category",
+    "ha_specifics",
+    "as_specifics",
+    "rs_specifics",
 ]
 update_url = f"{client.br_base_url}database/rows/table/{courses_table_id}/batch/?user_field_names=true"
 for batch in tqdm(batched_data):

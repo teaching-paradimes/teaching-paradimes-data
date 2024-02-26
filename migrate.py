@@ -115,6 +115,30 @@ COURSES_SCHEMA = [
         "link_row_table_id": table_ids["aws_specifics_themes"]["id"],
         "has_related_field": False,
     },
+    {
+        "name": "smt_specifics",
+        "type": "link_row",
+        "link_row_table_id": table_ids["smt_specifics"]["id"],
+        "has_related_field": False,
+    },
+    {
+        "name": "ha_specifics",
+        "type": "link_row",
+        "link_row_table_id": table_ids["ha_specifics"]["id"],
+        "has_related_field": False,
+    },
+    {
+        "name": "rs_specifics",
+        "type": "link_row",
+        "link_row_table_id": table_ids["rs_specifics"]["id"],
+        "has_related_field": False,
+    },
+    {
+        "name": "as_specifics",
+        "type": "link_row",
+        "link_row_table_id": table_ids["as_specifics"]["id"],
+        "has_related_field": False,
+    },
 ]
 
 courses, created = client.create_table("courses")

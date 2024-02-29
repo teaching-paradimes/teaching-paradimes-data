@@ -31,7 +31,7 @@ with open("helper_tables.json", "r") as f:
 print("creating and populating table")
 table_ids = {}
 for key, value in tables.items():
-    fields = [[x["value"]] for y, x in value.items() if x["value"] != "0"]
+    fields = [[x["value"]] for y, x in value.items()]
     fields.insert(0, ["value"])
     table, created = client.create_table(key, fields=fields)
     print(f"created {table}")

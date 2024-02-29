@@ -58,7 +58,7 @@ for batch in tqdm(batched_data):
         for field in sample_fields:
             if isinstance(x[field], dict):
                 try:
-                    item[field] = [int(x[field]["id"])]
+                    item[field] = [int(x[field]["new_id"])]
                 except KeyError:
                     pass
             else:
@@ -67,7 +67,7 @@ for batch in tqdm(batched_data):
             item[key] = []
             for y in value:
                 try:
-                    item[key].append(int(x[y]["id"]))
+                    item[key].append(int(x[y]["new_id"]))
                 except (KeyError, TypeError):
                     continue
             if not item[key]:

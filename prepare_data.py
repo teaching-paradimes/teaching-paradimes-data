@@ -24,6 +24,7 @@ for x in files:
     df.columns = ["id", "value"]
     for i, row in df.iterrows():
         lookup_dict[name][str(row["id"])] = row.to_dict()
+        lookup_dict[name][str(row["id"])]["new_id"] = i + 1
 
 with open("helper_tables.json", "w", encoding="utf-8") as f:
     json.dump(lookup_dict, f, ensure_ascii=True, indent=2)
